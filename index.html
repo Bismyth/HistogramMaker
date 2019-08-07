@@ -12,12 +12,37 @@
     <h1 style='text-align:center;'>Histograms based on the rolling of dice</h1>
     <div class = 'flex-container'>
         <div id='container' class = 'p5-container'></div>
-        <form onsubmit='process(); return false;' id='theForm' class='form-container'>
-          <input><br>
-          <input><br>
-          <input><br>
-          <input type='submit'>
-        </form>
+        <div class='form-container'>
+          <form id='theForm' >
+            <h3>Change the Graph</h3>
+            <div class='table'>
+              <span class='field'>
+                <label>Dice: </label>
+                <span class='input'>
+                  <input type='range' class = 'slider' min='0' value = '3' max='6' step = '1' oninput='diceUpdate()' id='dice'>
+                  <span id = 'diceLabel'>(d10)</span> 
+                </span>
+                <img id='diceimg' height='75px' src='diceImages/d10.png'>
+              </span>
+              <span class='field'>
+                  <label>Rolls:</label>
+                  <span class='input'>
+                    <input type = 'range' class='slider' min='1' max='20' step='1' value = '2' id='roll' oninput='rollUpdate()'>
+                    <span id='rollsLabel'>2</span>
+                  </span>
+              </span>
+              <br>
+              <span class='field'>
+                  <label>Iterations: </label>
+                  <span class='input'>
+                    <input type='number' oninput='process()' value='10000'>
+                  </span>
+              </span>
+              <br>
+            </div>
+          </form>
+          <img src='loading.gif' hidden='true' id='loading'>
+        </div>
     </div>
   </body>
 </html>
