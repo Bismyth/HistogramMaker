@@ -17,7 +17,7 @@ function process(){
   dsize = dice[parseInt(form[0].value)];
   rolls = parseInt(form[1].value);
   for(var x=0;x < form.length;x++){form[x].disabled=true;}
-  setTimeout(function(){histogram(_p,trial,dsize,rolls,form)},5);
+  setTimeout(function(){histogram(_p,trial,dsize,rolls,form)},20);
   
 }
 
@@ -46,11 +46,9 @@ function diceUpdate(){
   var di = dice[document.getElementById('dice').value];
   document.getElementById('diceimg').src='diceImages/d'+di+'.png';
   document.getElementById('diceLabel').innerHTML = '(d'+di+')';
-  process();
 }
 function rollUpdate(){
   document.getElementById('rollsLabel').innerHTML = document.getElementById('roll').value;
-  process();
 }
 // function iterUpdate(){
 //   document.getElementById('iterLabel').innerHTML = document.getElementById('iter').value;

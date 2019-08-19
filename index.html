@@ -35,10 +35,15 @@
               <span class='field'>
                   <label>Iterations: </label>
                   <span class='input'>
-                    <input type='number' oninput='process()' value='10000'>
+                    <input type='number' value='10000'>
                   </span>
               </span>
               <br>
+              <span class='field'>
+                <span class='input'>
+                  <input type='button' value='Calculate' onclick='process()'>
+                </span>
+            </span>
             </div>
           </form>
           <img src='loading.gif' hidden='true' id='loading'>
